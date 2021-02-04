@@ -1,0 +1,27 @@
+{
+    "name": "hellpat/php-starter",
+    "description": "A simple HTTP-Starter-Kit for learning purpose",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Patrick Heller",
+            "email": "paddy.heller@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./hellpat/tools"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "8.0.1"
+        }
+    },
+    "require": {
+        "hellpat/tools": "*"
+    }
+}
