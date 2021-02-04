@@ -23,4 +23,9 @@ final class Response
     {
         return self::create($body, StatusCodeInterface::STATUS_OK, $headers);
     }
+
+    public static function notFound(string $body, array $headers = []): ResponseInterface
+    {
+        return self::create($body, StatusCodeInterface::STATUS_NOT_FOUND, $headers);
+    }
 }

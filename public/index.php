@@ -12,4 +12,17 @@ Debug::enable();
 
 $request = ServerRequest::createFromGlobals();
 
-send((fn($request) => Response::ok(''))($request));
+$uri = $request->getUri()->getPath();
+
+try {
+    $action = match($uri) {
+        '/' => fn($request) => Response::ok(''),
+    };
+
+    $response = $action($request);
+    send($response);
+} catch (UnhandledMatchError $e) {
+    send((fn($request) => Response::notFound(''))($request));
+}
+
+
